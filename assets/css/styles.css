@@ -1,0 +1,34 @@
+* {
+  font-family: 'Ubuntu';
+}
+
+:root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+:body{
+  100%;
+
+.contact-clean {
+  height: 100%;
+}
+
+.custom-control-label {
+  font-size: 14px;
+}
+
+.chosen-container-single .chosen-single {
+    font-size: 14px;
+    text-align: left;
+}
+
+.chosen-drop {
+	text-align: left;
+}
+
+.chosen-results .active-result{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
