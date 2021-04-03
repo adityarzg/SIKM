@@ -18,7 +18,7 @@
                 <hr style="border: 1px solid white;width: 90%">
 
                 <a <?php if ($halaman == "user") { echo "class='nav-link active'";} ?> class="nav-link" href="data-user.php"><i class="fas fa-user"></i><span>Pengguna Aplikasi</span></a>
-                <a <?php if ($halaman == "satker") { echo "class='nav-link active'";} ?> class="nav-link" href="#"><i class="fas fa-cog"></i><span>Pengaturan Satuan Kerja</span></a>
+                <a <?php if ($halaman == "satker") { echo "class='nav-link active'";} ?> class="nav-link" href="edit-satker.php"><i class="fas fa-cog"></i><span>Pengaturan Satuan Kerja</span></a>
             </li>
         </ul>
         <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>

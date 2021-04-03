@@ -7,11 +7,12 @@
     if ($_SESSION['status'] != "login") {
         header("location:login.php");
     } 
+    $halaman = "pengunjung";
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Data - SIKM</title>
+    <title>Edit Data - e-SKM</title>
     <?php 
     	include("page/head.php");
      ?>
@@ -41,7 +42,7 @@
                                 $sql = mysqli_query($koneksi, "select * from tbl_biodata where no_id = $id");
                                 while ($data=mysqli_fetch_array($sql)) {
                                 	?>
-                                		<input class="form-control" type="text" style="margin-bottom: 10px;" name="no_id" value="<?php echo $data['no_id'] ?>">
+                                		<input hidden class="form-control" type="text" style="margin-bottom: 10px;" name="no_id" value="<?php echo $data['no_id'] ?>">
                                 		<input autofocus class="form-control" type="text" style="margin-bottom: 10px;" name="nama" value="<?php echo $data['nama'] ?>">
                                         <input class="form-control" type="date" style="margin-bottom: 10px;" name="tgl_lahir" value="<?php echo $data['tgl_lahir'] ?>">
                             			<input class="form-control" type="text" style="margin-bottom: 10px;" name="no_tlp" value="<?php echo$data['no_tlp'] ?>">
@@ -67,7 +68,8 @@
                                 <?php
                                 }
                             ?>
-                            <button class="btn btn-success btn-block" type="submit">SIMPAN</button>
+                            <a class="btn btn-danger" href="data-pengunjung.php" role="button">KEMBALI</a>
+                            <button class="btn btn-success" type="submit">SIMPAN</button>
                         </form>
                     </div>
                 </div>
@@ -78,7 +80,8 @@
                 <div class="text-center my-auto copyright"><span>Pengadilan Tata Usaha Negara Palu © 2021</span></div>
             </div>
         </footer>
-    </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+    </div>
+    <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
