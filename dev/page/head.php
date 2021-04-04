@@ -1,8 +1,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap">
 <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
 
@@ -18,3 +20,8 @@
 <link rel="stylesheet" type="text/css" href="assets/DataTables/Responsive-2.2.7/js/responsive.bootstrap4.min.js">
 <link rel="stylesheet" type="text/css" href="../assets/vendors/css/chart/chart.css">
 <link rel="stylesheet" type="text/css" href="../assets/vendors/css/chart/chart.min.css">
+<style>
+    .sidebar-brand-text {
+        font-family: 'Audiowide', cursive;
+    }
+</style>

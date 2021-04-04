@@ -74,18 +74,18 @@ ob_start();
 	<table>
 		<tr>
 			<?php
-			include("../../koneksi.php");
-			$sql = mysqli_query($koneksi, "SELECT * FROM tbl_satker");
-			while ($data = mysqli_fetch_array($sql)) {
-			?>
-				<td><img src="<?php echo "../../assets/img/" . $data['logo_satker'] . ""; ?>" height="80" style="margin: 0px 100px 0px 100px"></td>
-				<td align="center">
-					<h1><?php echo $data['nama_satker']; ?></h1>
-					<h3><?php echo $data['alamat_satker']; ?></h3>
-					<h4><span><?php echo $data['situs']; ?></span> - Telp: <span><?php echo $data['no_tlp']; ?></span> / HP : <span><?php echo $data['no_hp']; ?></span></h4>
-				</td>
-			<?php
-			}
+				include("../../koneksi.php");
+				$sql = mysqli_query($koneksi, "SELECT * FROM tbl_satker");
+				while ($data = mysqli_fetch_array($sql)) {
+				?>
+					<td><img src="<?php echo "../../assets/img/" . $data['logo_satker'] . ""; ?>" height="80" style="margin: 0px 100px 0px 100px"></td>
+					<td align="center">
+						<h1><?php echo $data['nama_satker']; ?></h1>
+						<h3><?php echo $data['alamat_satker']; ?></h3>
+						<h4><span><?php echo $data['situs']; ?></span> - Telp: <span><?php echo $data['no_tlp']; ?></span> / HP : <span><?php echo $data['no_hp']; ?></span></h4>
+					</td>
+				<?php
+				}
 			?>
 		</tr>
 	</table>

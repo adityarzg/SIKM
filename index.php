@@ -18,22 +18,30 @@
     <script src="assets/vendors/js/chosen/chosen.jquery.min.js" type="text/javascript"></script>
 </head>
 
-<body style="background: linear-gradient(54deg, rgba(105,46,133,0.78) 12%, rgb(50,93,188) 55%, rgba(111,165,42,0.66) 90%), #325dbc;">
+<body style="background: linear-gradient(54deg, rgba(105,46,133,0.78) 12%, rgb(50,93,188) 55%, rgba(111,165,42,0.66) 90%), #325dbc">
     <div>
         <div class="container-fluid" style="background: #ff9900;">
-            <div class="row" style="padding: 15px;">                                
-                <div class="col-12 text-center"><img class="img-fluid" src="assets/img/LOGO%20PTUN%20PALU%20NEW.png" width="55px"></div>
-                <div class="col">
-                    <h2 class="text-center" style="font-weight: bold;font-style: normal;color: #ffffff;">E - SKM</h2>
-                    <h6 class="text-center" style="color: rgb(255,255,255);line-height: 0px;">Elektornik - Survey Kepuasan Masyarakat</h6>
+            <?php
+            include("koneksi.php");
+            $sql = mysqli_query($koneksi, "SELECT * FROM tbl_satker");
+            while ($data = mysqli_fetch_array($sql)) {
+            ?>
+                <div class="row" style="padding: 15px;">
+                    <div class="col-12 text-center"><img class="img-fluid" src="<?php echo "assets/img/" . $data['logo_satker'] . ""; ?>" width="55px"></div>
+                    <div class="col">
+                        <h2 class="text-center" style="font-weight: bold;font-style: normal;color: #ffffff;">E - SKM</h2>
+                        <h6 class="text-center" style="color: rgb(255,255,255);line-height: 0px;">Elektornik - Survey Kepuasan Masyarakat</h6>
+                    </div>
                 </div>
-            </div>
+            <?php
+            }
+            ?>
         </div>
     </div>
     <hr style="border-width: 10px;">
     <div class="container" style="background: rgba(255,255,255,0);">
         <div class="row text-center">
-            <div class="col-8 offset-2">
+            <div class="col-lg-10 col-md-6 offset-lg-1 offset-md-3">
                 <form method="POST" action="form-create-sikm.php ">
                     <div role="tablist" id="accordion-1">
                         <div class="card">
@@ -42,20 +50,20 @@
                             </div>
                             <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
                                 <div class="card-body">
-                                <select class="custom-select custom-select-sm" autofocus="" required="" name="nama" id="nama">
-                                <optgroup label="Pilih Nama Dibawah">
-                                    <option disabled selected hidden value="">Nama</option>
-                                    <?php 
-                                        include('koneksi.php');
-                                        $sql = mysqli_query($koneksi, "select * from tbl_biodata");
-                                        while ($data = mysqli_fetch_array($sql)) {
-                                     ?>
-                                     <option value="<?=$data['nama']?>"><?=$data['nama']?></option>
-                                     <?php 
-                                        }
-                                      ?>
-                                </optgroup>
-                                </select>
+                                    <select class="custom-select custom-select-sm" autofocus="" required="" name="nama" id="nama">
+                                        <optgroup label="Pilih Nama Dibawah">
+                                            <option disabled selected hidden value="">Nama</option>
+                                            <?php
+                                            include('koneksi.php');
+                                            $sql = mysqli_query($koneksi, "select * from tbl_biodata");
+                                            while ($data = mysqli_fetch_array($sql)) {
+                                            ?>
+                                                <option value="<?= $data['nama'] ?>"><?= $data['nama'] ?></option>
+                                            <?php
+                                            }
+                                            ?>
+                                        </optgroup>
+                                    </select>
                                     <input name="no_tlp" id="no_tlp" class="form-control form-control-sm" type="text" placeholder="No. Telepon / Hp" style="margin-top: 10px;">
                                     <input name="tanggal" class="form-control form-control-sm" type="datetime-local" style="margin-top: 10px;">
                                 </div>
@@ -327,8 +335,8 @@
                                         <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-99" name="penampilan-petugas" value="Cukup Puas"><label class="custom-control-label" for="formCheck-99">Cukup Puas</label></div>
                                         <div class="custom-control custom-control-inline custom-radio"><input class="custom-control-input" type="radio" id="formCheck-100" name="penampilan-petugas" value="Kurang Puas"><label class="custom-control-label" for="formCheck-100">Kurang Puas</label></div>
                                     </div>
-                                    <div class="col" style="text-align: left;"><label class="col-form-label" style="margin-bottom: 0px;font-weight: normal;font-style: italic;">*Kritik dan Saran Untuk Layanan Pengadilan Tata Usaha Negara Palu</label></div><textarea name="kritik-saran" class="form-control" rows="6" placeholder="Tuliskan kritik dan saran ....."
-                                        style="font-size: 12px;"></textarea><button class="btn btn-success btn-block text-uppercase" type="submit" style="margin-top: 10px;">simpan</button></div>
+                                    <div class="col" style="text-align: left;"><label class="col-form-label" style="margin-bottom: 0px;font-weight: normal;font-style: italic;">*Kritik dan Saran Untuk Layanan Pengadilan Tata Usaha Negara Palu</label></div><textarea name="kritik-saran" class="form-control" rows="6" placeholder="Tuliskan kritik dan saran ....." style="font-size: 12px;"></textarea><button class="btn btn-success btn-block text-uppercase" type="submit" style="margin-top: 10px;">simpan</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -336,21 +344,20 @@
             </div>
         </div>
     </div>
-    <hr style="border-width: 10px;">
+    <hr class="garis" style="border-width: 10px;">
     <div class="footer-basic" style="background: rgb(255,153,0);padding-top: 30px;padding-bottom: 30px;">
         <footer>
             <div class="social" style="padding-bottom: 0px;"><a href="https://www.instagram.com/ptunpalu/" style="border-color: rgb(255,255,255);"><i class="fab fa-instagram" style="color: rgb(255,255,255);"></i></a><a href="https://www.youtube.com/user/PTUNPALU" style="border-color: #ffffff;"><i class="fab fa-youtube" style="color: rgb(255,255,255);"></i></a>
-                <a
-                    href="https://www.facebook.com/ptunpalu1998" style="border-color: #ffffff;"><i class="fab fa-facebook" style="color: rgb(247,251,255);"></i></a>
+                <a href="https://www.facebook.com/ptunpalu1998" style="border-color: #ffffff;"><i class="fab fa-facebook" style="color: rgb(247,251,255);"></i></a>
             </div>
-            <p class="copyright" style="color: rgb(255,255,255);">Pengadilan Tata Usaha Negara Palu © 2021</p>
+            <p class="copyright" style="color: rgb(255,255,255);">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> <span> 2021 IT - Pengadilan Tata Usaha Negara Palu</span></p>
         </footer>
     </div>
     <script>
         $(function() {
-            $("#nama").change(function(){
+            $("#nama").change(function() {
                 var nama = $("#nama").val();
- 
+
                 $.ajax({
                     url: 'form-read-sikm.php',
                     type: 'POST',
@@ -358,7 +365,7 @@
                     data: {
                         'nama': nama
                     },
-                    success: function (cust) {
+                    success: function(cust) {
                         $("#no_tlp").val(cust['no_tlp']);
                     }
                 });
@@ -367,7 +374,7 @@
     </script>
 
     <script>
-        $('document').ready(function(){
+        $('document').ready(function() {
             $("#nama").chosen({
                 no_result_text: "maaf kategori yang dicari tidak ada"
             });

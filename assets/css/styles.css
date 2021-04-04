@@ -7,8 +7,10 @@
   margin: 0;
   padding: 0;
 }
+
 :body{
-  100%;
+  height: 100%;
+}
 
 .contact-clean {
   height: 100%;
@@ -31,4 +33,52 @@
     overflow:hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+}
+
+@media(max-width:1600px){
+
+}
+
+@media(max-width:1080px){
+  .footer-basic{
+    margin-top: 100%;
+  }
+
+  .garis{
+    display: none;
+  }
+}
+
+@media(max-width:768px){
+
+}
+
+@media(max-width:736px){
+
+}
+
+@media(max-width:667px){
+
+}
+
+@media(max-width:640px){
+
+}
+
+@media(max-width:600px){
+
+}
+
+@media(max-width:568px){
+
+}
+
+@media(max-width:480px){
+.frame {
+  width: 90%;
+}
+}
+
+@media(max-width:414px){
+
 }

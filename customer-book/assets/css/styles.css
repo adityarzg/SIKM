@@ -35,7 +35,7 @@ html, body {
     height: 100%;
   }
   .container-md {
-    padding-top: 15px;
+    padding-top: 10px;
   }
 }
 
@@ -49,3 +49,13 @@ html, body {
   }
 }
 
+@media (min-width: 375px) and (max-width: 768px) {
+  html,body{
+    height: auto;
+    width: auto;
+    font-size: 12px;
+  }
+  .container-md {
+    padding-top: 10px;
+  }
+}

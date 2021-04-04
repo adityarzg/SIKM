@@ -107,10 +107,10 @@
                                                     <td><?php echo $no++; ?></td>
                                                     <td><?php echo $data['no_id']; ?></td>
                                                     <td><?php echo $data['nama']; ?></td>
-                                                    <td><?php echo $data['tgl_lahir']; ?></td>
+                                                    <td><?php echo date('d / M / Y', strtotime($data['tgl_lahir'])) ?></td>
                                                     <td><?php echo $data['no_tlp']; ?></td>
                                                     <td><?php echo $data['jenis_kelamin']; ?></td>
-                                                    <td><?php echo date('d/m/Y, H:i', strtotime($data['tanggal']));?></td>
+                                                    <td><?php echo date('d/M/Y, H:i', strtotime($data['tanggal']));?></td>
                                                     <td><?php echo $data['alamat']; ?></td>
                                                     <td><?php echo $data['pekerjaan']; ?></td>
                                                     <td><?php echo $data['keperluan']; ?></td>
@@ -127,9 +127,7 @@
             </div>
         </div>
         <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Pengadilan Tata Usaha Negara Palu © 2021</span></div>
-            </div>
+           <?php include("page/footer.php");?>
         </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script type="text/javascript">

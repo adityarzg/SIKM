@@ -23,7 +23,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
+<style>
+    *{font-size: 15px;}
+</style>
 <body>
     <div class="container-md">
         <div class="col-auto col-sm-10 col-md-8 col-lg-6 col-xl-6 offset-sm-1 offset-md-2 offset-lg-3" data-aos="fade-up" data-aos-duration="800" data-aos-once="true" style="background: #ff9900;padding: 20px;border-radius: 10px;border-style: solid;border-color: #ff9900;text-shadow: 0px 0px;box-shadow: 6px 5px 11px rgb(81,82,82);">
@@ -37,7 +39,7 @@
             <div class="row">
                 <div class="col">
                     <form action="" method="post" class="text-left" method="post" style="padding: 20px;font-family: Ubuntu, sans-serif;">
-                        <input name="no_id" id="no_id" class="form-control" type="text" style="margin-bottom: 10px;" placeholder="Nomor Identitas" autofocus="" required="" maxlength="16">
+                        <input name="no_id" id="no_id" class="form-control" type="text" style="margin-bottom: 10px;" placeholder="Nomor Identitas" autofocus="" required="" maxlength="16";>
                         <input name="nama" id="nama" class="form-control" type="text" style="margin-bottom: 10px;" placeholder="Nama">
                         <input class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="Tanggal Lahir" type="text" onfocus="(this.type='date')" style="margin-bottom: 10px;" >
                         <input name="tel" id="tel" class="form-control" type="tel"  style="margin-bottom: 10px;" placeholder="No. Telepon / Hp">
@@ -50,7 +52,7 @@
                         <input name="pekerjaan" id="pekerjaan" class="form-control" type="text" style="margin-bottom: 0px;margin-bottom: 10px;" placeholder="Pekerjaan">
                         <input name="tanggal" required class="form-control" type="text" placeholder="Tanggal Kunjungan" onfocus="(this.type='datetime-local')" style="margin-bottom: 10px;">
                         <input name="keperluan" required class="form-control" type="text" style="margin-bottom: 0px;margin-top: 10px;" placeholder="Keperluan">
-                        <div class="row">
+                        <div class="row" style="margin-bottom:15px">
                             <div class="col-md-6">
                                 <input class="btn btn-primary btn-block btn-sm" name="save-new" formaction="form-create-custbook.php" type="submit" value="SIMPAN SEBAGAI DATA BARU" style="margin-top: 15px;box-shadow: 0px 2px 3px rgb(106,106,106);">
                             </div>
@@ -58,6 +60,7 @@
                                 <input class="btn btn-success btn-block btn-sm" name="recent-visit" formaction="form-visit-custbook.php" type="submit" value="SIMPAN KUNJUNGAN HARI INI" style="margin-top: 15px;box-shadow: 0px 2px 3px rgb(106,106,106);">
                             </div>
                         </div>
+                        <a href="../dev" class="btn btn-sm btn-dark btn-block" style="font-style:italic;text-transform:uppercase;">Buka Halaman Admin</a>
                     </form>
                 </div>
             </div>

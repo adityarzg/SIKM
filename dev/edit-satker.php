@@ -53,7 +53,7 @@ $halaman = "satker";
                                     <input class="form-control" type="text" style="margin-bottom: 10px;" name="no_hp" value="<?php echo $data['no_hp'] ?>" placeholder="Nomor HP Satuan Kerja">
                                     <input class="form-control" type="text" style="margin-bottom: 10px;" name="email" value="<?php echo $data['email'] ?>" placeholder="Email Satuan Kerja">
                                     <input class="form-control" type="text" style="margin-bottom: 10px;" name="situs" value="<?php echo $data['situs'] ?>" placeholder="Situs Website Satuan Kerja">
-                                    <img src="<?php echo "../assets/img/".$data['logo_satker'].""; ?>" id="gbr_preview" height="200" alt=" Preview Gambar" onerror="this.src='../assets/img/no-image.png'">
+                                    <img src="<?php echo "../assets/img/" . $data['logo_satker'] . ""; ?>" id="gbr_preview" height="200" alt=" Preview Gambar" onerror="this.src='../assets/img/no-image.png'">
                                     <br><br>
                                     <div class="form-group">
                                         <label for="logo">Logo Satker :</label>
@@ -69,9 +69,7 @@ $halaman = "satker";
                 </div>
             </div>
             <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Pengadilan Tata Usaha Negara Palu © 2021</span></div>
-                </div>
+                <?php include("page/footer.php"); ?>
             </footer>
         </div>
         <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>

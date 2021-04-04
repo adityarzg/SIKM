@@ -84,7 +84,7 @@
                                         include("../koneksi.php");
 
                                         $no = 1;
-                                        $sql = mysqli_query($koneksi, 'select * from tbl_survey');
+                                        $sql = mysqli_query($koneksi, 'select * from tbl_survey order by tanggal desc');
                                         while ($data=mysqli_fetch_array($sql)) {
                                             ?>
                                             <tr>
@@ -93,7 +93,7 @@
                                                 <td hidden=""><?php echo $data['id_sikm']; ?></td>
                                                 <td><?php echo $data['nama']; ?></td>
                                                 <td><?php echo $data['no_tlp']; ?></td>
-                                                <td><?php echo $data['tanggal']; ?></td>
+                                                <td><?php echo date('d/M/Y, H:i', strtotime($data['tanggal'])) ?></td>
                                                 <td><?php echo $data['fasilitas_informasi']; ?></td>
                                                 <td><?php echo $data['fasilitas_toilet']; ?></td>
                                                 <td><?php echo $data['parkir_kendaraan']; ?></td>
@@ -131,9 +131,7 @@
             </div>
         </div>
         <footer class="bg-white sticky-footer">
-            <div class="container my-auto">
-                <div class="text-center my-auto copyright"><span>Pengadilan Tata Usaha Negara Palu © 2021</span></div>
-            </div>
+            <?php include("page/footer.php");?>
         </footer>
     </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
     <script type="text/javascript">

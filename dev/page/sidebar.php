@@ -13,7 +13,7 @@
                 <a <?php if ($halaman == "pengunjung") { echo "class='nav-link active'";} ?> class="nav-link" href="data-pengunjung.php"><i class="fas fa-table"></i><span>Daftar Pengunjung</span></a>
                 <a <?php if ($halaman == "kunjungan") { echo "class='nav-link active'";} ?> class="nav-link" href="data-kunjungan.php"><i class="fas fa-table"></i><span>Daftar Kunjungan</span></a>
                 <a <?php if ($halaman == "survey") { echo "class='nav-link active'";} ?> class="nav-link" href="data-survey.php"><i class="fas fa-table"></i><span>Data Survey IKM</span></a>
-                <a <?php if ($halaman == "grafik") { echo "class='nav-link active'";} ?> class="nav-link" href="#"><i class="fas fa-chart-bar"></i><span>Grafik Keseluruhan</span></a>
+                <a <?php if ($halaman == "grafik") { echo "class='nav-link active'";} ?> class="nav-link" href="tampil-grafik.php" target="_blank"><i class="fas fa-chart-bar"></i><span>Grafik Keseluruhan</span></a>
 
                 <hr style="border: 1px solid white;width: 90%">
 
