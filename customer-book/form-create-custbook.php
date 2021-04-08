@@ -27,10 +27,12 @@
 	$keperluan = $_POST['keperluan'];
 
 	//menginput data ke database
-	$sql = mysqli_query($koneksi, "insert into tbl_biodata values('$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan')");
+	$sql = mysqli_query($koneksi, "insert into tbl_biodata values('$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan');");
+
+	$sql .= mysqli_query($koneksi, "insert into tbl_visit values('','$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan')");
 
 	//mengalihkan halaman ke index.php
-	if ($sql) {
+	if (mysqli_multi_query($koneksi, $sql)) {
 		echo "<script>Swal.fire({
          		icon: 'success',
         		title: 'Selamat!',

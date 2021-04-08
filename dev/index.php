@@ -87,7 +87,7 @@ $halaman = "beranda";
                                             <?php
                                             include("../koneksi.php");
                                             $hari_ini = date("Y-m-d");
-                                            $data_pengunjung = mysqli_query($koneksi, "select * from tbl_biodata where tanggal LIKE '$hari_ini%'");
+                                            $data_pengunjung = mysqli_query($koneksi, "select * from tbl_visit where tanggal LIKE '$hari_ini%'");
                                             $jumlah_pengunjung_hari = mysqli_num_rows($data_pengunjung);
                                             ?>
                                             <div class="text-dark font-weight-bold h5 mb-0"><span><?php echo $jumlah_pengunjung_hari; ?></span></div>

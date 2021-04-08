@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/img/icon.png">
     <title>E-SKM</title>
     <script src="assets/js/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -42,7 +43,7 @@
     <div class="container" style="background: rgba(255,255,255,0);">
         <div class="row text-center">
             <div class="col-lg-10 col-md-6 offset-lg-1 offset-md-3">
-                <form method="POST" action="form-create-sikm.php ">
+                <form method="POST" action="form-create-sikm.php">
                     <div role="tablist" id="accordion-1">
                         <div class="card">
                             <div class="card-header" role="tab">
@@ -50,22 +51,10 @@
                             </div>
                             <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
                                 <div class="card-body">
-                                    <select class="custom-select custom-select-sm" autofocus="" required="" name="nama" id="nama">
-                                        <optgroup label="Pilih Nama Dibawah">
-                                            <option disabled selected hidden value="">Nama</option>
-                                            <?php
-                                            include('koneksi.php');
-                                            $sql = mysqli_query($koneksi, "select * from tbl_biodata");
-                                            while ($data = mysqli_fetch_array($sql)) {
-                                            ?>
-                                                <option value="<?= $data['nama'] ?>"><?= $data['nama'] ?></option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </optgroup>
-                                    </select>
+                                    <input name="nama" id="nama" class="form-control form-control-sm" type="text" placeholder="Nama" style="margin-top: 10px;">
                                     <input name="no_tlp" id="no_tlp" class="form-control form-control-sm" type="text" placeholder="No. Telepon / Hp" style="margin-top: 10px;">
                                     <input name="tanggal" class="form-control form-control-sm" type="datetime-local" style="margin-top: 10px;">
+                                    <!-- <img src="" id="gbr_preview" height="50" alt=" Preview Gambar" onerror="this.src='assets/img/no-image.png'" style="margin-top: 10px;"> -->
                                 </div>
                             </div>
                         </div>
@@ -372,15 +361,24 @@
             });
         });
     </script>
-
-    <script>
-        $('document').ready(function() {
-            $("#nama").chosen({
-                no_result_text: "maaf kategori yang dicari tidak ada"
-            });
-        })
-    </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script>
+        /*Preview Gambar Sebelum di Upload Ke database*/
+        function bacaGambar(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#gbr_preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#file").change(function() {
+            bacaGambar(this);
+        });
+    </script> -->
 </body>
 
 </html>

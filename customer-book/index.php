@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../assets/img/icon.png">
     <title>Buku Tamu</title>
     <script src="assets/js/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -40,7 +41,7 @@
                 <div class="col">
                     <form action="" method="post" class="text-left" method="post" style="padding: 20px;font-family: Ubuntu, sans-serif;">
                         <input name="no_id" id="no_id" class="form-control" type="text" style="margin-bottom: 10px;" placeholder="Nomor Identitas" autofocus="" required="" maxlength="16";>
-                        <input name="nama" id="nama" class="form-control" type="text" style="margin-bottom: 10px;" placeholder="Nama">
+                        <input name="nama" id="nama" class="form-control" type="text" style="margin-bottom: 10px;text-transform:capitalize" placeholder="Nama">
                         <input class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="Tanggal Lahir" type="text" onfocus="(this.type='date')" style="margin-bottom: 10px;" >
                         <input name="tel" id="tel" class="form-control" type="tel"  style="margin-bottom: 10px;" placeholder="No. Telepon / Hp">
                         <select name="jk" id="jk" class="form-control" type="text" style="margin-bottom: 10px;" >
@@ -48,10 +49,10 @@
                             <option value="Laki-Laki">Laki-Laki</option>
                             <option value="Perempuan">Perempuan</option>
                         </select>
-                        <textarea name="alamat" id="alamat" class="form-control" placeholder="Asal / Alamat" rows="2" style="margin-bottom: 10px;"></textarea>
-                        <input name="pekerjaan" id="pekerjaan" class="form-control" type="text" style="margin-bottom: 0px;margin-bottom: 10px;" placeholder="Pekerjaan">
+                        <textarea name="alamat" id="alamat" class="form-control" placeholder="Asal / Alamat" rows="2" style="margin-bottom: 10px;text-transform:capitalize;"></textarea>
+                        <input name="pekerjaan" id="pekerjaan" class="form-control" type="text" style="margin-bottom: 0px;margin-bottom: 10px;text-transform:capitalize;" placeholder="Pekerjaan">
                         <input name="tanggal" required class="form-control" type="text" placeholder="Tanggal Kunjungan" onfocus="(this.type='datetime-local')" style="margin-bottom: 10px;">
-                        <input name="keperluan" required class="form-control" type="text" style="margin-bottom: 0px;margin-top: 10px;" placeholder="Keperluan">
+                        <input name="keperluan" required class="form-control" type="text" style="margin-bottom: 0px;margin-top: 10px;text-transform:capitalize;" placeholder="Keperluan">
                         <div class="row" style="margin-bottom:15px">
                             <div class="col-md-6">
                                 <input class="btn btn-primary btn-block btn-sm" name="save-new" formaction="form-create-custbook.php" type="submit" value="SIMPAN SEBAGAI DATA BARU" style="margin-top: 15px;box-shadow: 0px 2px 3px rgb(106,106,106);">

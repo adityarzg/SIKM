@@ -90,8 +90,8 @@
                                         <th>Jenis Kelamin</th>
                                         <th>Tanggal Pencatatan</th>
                                         <th>Alamat</th>
-                                        <th>Keperluan</th>
                                         <th>Pekerjaan</th>
+                                        <th>Keperluan</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -100,7 +100,7 @@
                                         include("../koneksi.php");
 
                                         $no = 1;
-                                        $sql = mysqli_query($koneksi, 'select * from tbl_biodata');
+                                        $sql = mysqli_query($koneksi, 'select * from tbl_biodata order by tanggal desc');
                                         while ($data=mysqli_fetch_array($sql)) {
                                             ?>
                                                 <tr>
