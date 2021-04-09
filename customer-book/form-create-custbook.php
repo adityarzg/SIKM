@@ -27,13 +27,15 @@
 	$keperluan = $_POST['keperluan'];
 
 	//menginput data ke database
-	$sql = mysqli_query($koneksi, "insert into tbl_biodata values('$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan');");
+	$sql1 = "insert into tbl_biodata values('$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan')";
 
-	$sql .= mysqli_query($koneksi, "insert into tbl_visit values('','$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan')");
+	$sql2 = "insert into tbl_visit values(NULL,'$no_id','$nama','$tgl_lahir','$tel','$jk','$tanggal','$alamat','$pekerjaan','$keperluan')";
 
 	//mengalihkan halaman ke index.php
-	if (mysqli_multi_query($koneksi, $sql)) {
-		echo "<script>Swal.fire({
+	if (mysqli_query($koneksi, $sql1)) {
+
+		if (mysqli_query($koneksi, $sql2)) {
+			echo "<script>Swal.fire({
          		icon: 'success',
         		title: 'Selamat!',
          		text: 'Data pengunjung berhasil disimpan',
@@ -43,6 +45,19 @@
 	   				location.replace('index.php');
 	   			});
 		</script>";
+		} else {
+			echo "<script>Swal.fire({
+         		icon: 'error',
+        		title: 'Ooops!',
+         		text: 'Data gagal disimpan, cek kembali formulir anda',
+         		showConfirmButton: true,
+         		confirmButtonText:'Tutup'
+         		}).then(function(){ 
+	   				location.replace('index.php');
+	   			});
+		</script>";
+		}
+
 	}else{
 		echo "<script>Swal.fire({
          		icon: 'error',
